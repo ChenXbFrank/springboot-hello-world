@@ -14,9 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
+    @Value("${server.port}")
+    private String port;
+
     @GetMapping(value = "hello")
     public String hello() {
-        return "hello world docker!";
+        return "hello world docker!" + port;
     }
 
 }
